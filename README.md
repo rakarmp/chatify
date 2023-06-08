@@ -22,33 +22,32 @@ Darkmode/Lightmode
 1.  Pastikan Anda memiliki akun Pusher. Jika belum, daftar dan buat aplikasi baru di [https://pusher.com](https://pusher.com/).
 2.  Clone repositori ini ke direktori lokal Anda:
 
-markdownCopy code
-
-`git clone https://github.com/your-username/chat-app.git`
+```shell
+git clone https://github.com/rakarmp/chatify
+```
 
 3.  Navigasikan ke direktori proyek:
 
-markdownCopy code
-
-`cd chat-app`
+```shell
+cd chatify
+```
 
 4.  Instal paket-paket yang diperlukan dengan menjalankan perintah berikut:
 
-markdownCopy code
+```shell
+composer install
 
-`composer install
-npm install`
+npm install
+```
 
 5.  Salin file `.env.example` ke `.env`:
 
-markdownCopy code
-
-`cp .env.example .env`
+```shell
+cp .env.example .env
+```
 
 6.  Buka file `.env` dan ubah konfigurasi database sesuai dengan lingkungan Anda.
 7.  Atur konfigurasi Pusher di file `.env` dengan informasi yang Anda peroleh saat membuat aplikasi Pusher:
-
-markdownCopy code
 
 `BROADCAST_DRIVER=pusher
 PUSHER_APP_ID=YOUR_APP_ID
@@ -60,21 +59,21 @@ Pastikan untuk mengganti `YOUR_APP_ID`, `YOUR_APP_KEY`, `YOUR_APP_SECRET`, dan `
 
 8.  Generate key aplikasi Laravel dengan menjalankan perintah berikut:
 
-markdownCopy code
-
-`php artisan key:generate`
+```shell
+php artisan key:generate
+```
 
 9.  Jalankan migrasi untuk membuat tabel pesan di database:
 
-markdownCopy code
-
-`php artisan migrate`
+```shell
+php artisan migrate
+```
 
 10. Jalankan server lokal untuk menjalankan aplikasi:
 
-markdownCopy code
-
-`php artisan serve`
+```shell
+php artisan serve
+```
 
 11. Buka aplikasi di browser Anda dengan mengunjungi URL [http://localhost:8000](http://localhost:8000/).
 
