@@ -11,9 +11,11 @@ Dalam proyek ini, kita akan membuat sebuah website chat real-time menggunakan La
 
 ### Preview
 
-Berikut ini adalah tampilan preview dari website chat yang telah dibangun:
+Darkmode/Lightmode
 
-![Preview Website Chat](https://chat.openai.com/preview.png)
+![Darkmode](https://raw.githubusercontent.com/rakarmp/chatify/master/preview/21.PNG)
+
+![Lightmode](https://raw.githubusercontent.com/rakarmp/chatify/master/preview/22.PNG)
 
 ### Cara Menggunakan
 
