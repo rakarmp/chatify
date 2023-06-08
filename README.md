@@ -1,6 +1,4 @@
-## Website Chat menggunakan Laravel, Chatify, dan Pusher
-
-Dalam proyek ini, kita akan membuat sebuah website chat real-time menggunakan Laravel sebagai backend, Chatify sebagai frontend, dan Pusher sebagai layanan penyiaran pesan real-time.
+## Laravel, Chatify, dan Pusher
 
 ### Fitur
 
