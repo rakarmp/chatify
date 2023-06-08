@@ -1,66 +1,83 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Website Chat menggunakan Laravel, Chatify, dan Pusher
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Dalam proyek ini, kita akan membuat sebuah website chat real-time menggunakan Laravel sebagai backend, Chatify sebagai frontend, dan Pusher sebagai layanan penyiaran pesan real-time.
 
-## About Laravel
+### Fitur
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   Tampilan chat real-time yang responsif.
+-   Kemampuan untuk mengirim dan menerima pesan secara instan.
+-   Pengguna dapat melihat riwayat pesan sebelumnya.
+-   Dibangun menggunakan teknologi Laravel, Chatify, dan Pusher yang populer.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Preview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Berikut ini adalah tampilan preview dari website chat yang telah dibangun:
 
-## Learning Laravel
+![Preview Website Chat](https://chat.openai.com/preview.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Cara Menggunakan
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1.  Pastikan Anda memiliki akun Pusher. Jika belum, daftar dan buat aplikasi baru di [https://pusher.com](https://pusher.com/).
+2.  Clone repositori ini ke direktori lokal Anda:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+markdownCopy code
 
-## Laravel Sponsors
+`git clone https://github.com/your-username/chat-app.git`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+3.  Navigasikan ke direktori proyek:
 
-### Premium Partners
+markdownCopy code
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+`cd chat-app`
 
-## Contributing
+4.  Instal paket-paket yang diperlukan dengan menjalankan perintah berikut:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+markdownCopy code
 
-## Code of Conduct
+`composer install
+npm install`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5.  Salin file `.env.example` ke `.env`:
 
-## Security Vulnerabilities
+markdownCopy code
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+`cp .env.example .env`
 
-## License
+6.  Buka file `.env` dan ubah konfigurasi database sesuai dengan lingkungan Anda.
+7.  Atur konfigurasi Pusher di file `.env` dengan informasi yang Anda peroleh saat membuat aplikasi Pusher:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+markdownCopy code
+
+`BROADCAST_DRIVER=pusher
+PUSHER_APP_ID=YOUR_APP_ID
+PUSHER_APP_KEY=YOUR_APP_KEY
+PUSHER_APP_SECRET=YOUR_APP_SECRET
+PUSHER_APP_CLUSTER=YOUR_APP_CLUSTER`
+
+Pastikan untuk mengganti `YOUR_APP_ID`, `YOUR_APP_KEY`, `YOUR_APP_SECRET`, dan `YOUR_APP_CLUSTER` dengan nilai yang sesuai.
+
+8.  Generate key aplikasi Laravel dengan menjalankan perintah berikut:
+
+markdownCopy code
+
+`php artisan key:generate`
+
+9.  Jalankan migrasi untuk membuat tabel pesan di database:
+
+markdownCopy code
+
+`php artisan migrate`
+
+10. Jalankan server lokal untuk menjalankan aplikasi:
+
+markdownCopy code
+
+`php artisan serve`
+
+11. Buka aplikasi di browser Anda dengan mengunjungi URL [http://localhost:8000](http://localhost:8000/).
+
+12. Anda dapat mulai mengirim dan menerima pesan secara real-time dengan menggunakan fitur chat yang disediakan.
+
+### Kontribusi
+
+Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori ini dan buat branch baru untuk setiap fitur atau perbaikan yang Anda kerjakan. Setelah selesai, ajukan pull request ke branch utama.
